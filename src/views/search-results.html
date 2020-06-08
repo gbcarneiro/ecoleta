@@ -1,48 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt_br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecoleta - Resultado da pesquisa</title>
+{% extends "partials/layout.html" %}
 
-  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="./styles/main.css">
-  <link rel="stylesheet" href="./styles/search-results.css">
-  <link rel="stylesheet" href="./styles/responsive.css">
-</head>
-<body>
-  <div id="page-search-results">
-    {% include "partials/page-header.html" %}
+{% set bodyId = "page-search-results" %}
 
-    <main> 
-      <h4><strong>2 pontos</strong> encontrados</h4>
+{% block title %}
+<title>Ecoleta - Resultado da pesquisa</title>
+{% endblock title%}
 
-      <div class="cards">
-        <div class="card">
-          <img src="/assets/alfonso-navarro-qph7tJfcDys-unsplash.jpg" alt="Colectoria">
-          <h1>Colectoria</h1>
-          <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-          <p>
-            Rio do Sul, Santa Catarina <br/> 
-            Guilherme Gemballa, Jardim América <br/> 
-            Nº 260 
-          </p>
-        </div>
-        <div class="card">
-          <img src="/assets/ricardo-abreu-JEKj6nZfOpA-unsplash.jpg " alt="Papersider">
-          <h1>Papersider</h1>
-          <h3>Papéis e Papelão</h3>
-          <p>
-            Rio do Sul, Santa Catarina <br/> 
-            Guilherme Gemballa, Jardim América <br/> 
-            Nº 260 
-          </p>
-        </div>
-      </div>
-    </main>
-    
+{% block styles %}
+<link rel="stylesheet" href="./styles/search-results.css">
+{% endblock styles %}
+
+{% block content %}
+{% include "partials/page-header.html" %}
+
+<main>
+  <h4><strong>2 pontos</strong> encontrados</h4>
+
+  <div class="cards">
+    <div class="card">
+      <img src="/assets/alfonso-navarro-qph7tJfcDys-unsplash.jpg" alt="Colectoria">
+      <h1>Colectoria</h1>
+      <h3>Resíduos Eletrônicos, Lâmpadas</h3>
+      <p>
+        Rio do Sul, Santa Catarina <br />
+        Guilherme Gemballa, Jardim América <br />
+        Nº 260
+      </p>
+    </div>
+    <div class="card">
+      <img src="/assets/ricardo-abreu-JEKj6nZfOpA-unsplash.jpg " alt="Papersider">
+      <h1>Papersider</h1>
+      <h3>Papéis e Papelão</h3>
+      <p>
+        Rio do Sul, Santa Catarina <br />
+        Guilherme Gemballa, Jardim América <br />
+        Nº 260
+      </p>
+    </div>
   </div>
-</body>
-</html>
+</main>
+
+{% endblock content%}

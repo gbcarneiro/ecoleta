@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  {% block title %}{% endblock title %}
-  <title>Ecoleta</title>
+  {% block title %}
+    <title>Ecoleta</title>
+  {% endblock title %}
 
 
   <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
@@ -20,10 +21,15 @@
 </head>
 <body>
 
-  <div>
+  <div id="{{ bodyId }}">
     {% block content %}
+      {% block header %}
+      {% endblock header %}
     {% endblock content %}
   </div> 
+
+  {% block modal %}
+  {% endblock modal %}
 
   {% block script %}
   {% endblock script %}

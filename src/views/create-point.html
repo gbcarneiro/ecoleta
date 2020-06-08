@@ -1,97 +1,103 @@
-<!DOCTYPE html>
-<html lang="pt_br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecoleta - Cadastrar um ponto de coleta</title>
+{% extends "partials/layout.html" %}
 
-  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family= Ubuntu:wght@700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="./styles/main.css">
-  <link rel="stylesheet" href="./styles/create-point.css">
-  <link rel="stylesheet" href="./styles/responsive.css">
-</head>
-<body>
-  <div id="page-create-point">
-    {% include "partials/page-header.html" %}
+{% set bodyId = "page-create-point" %}
 
-    <form action="">
-      <h1>Cadastro do ponto de coleta</h1>
-      <fieldset class="data-fieldset">
-        <legend>
-          <h2>Dados da entidade</h2>
-        </legend>
+{% block title %}
+<title>Ecoleta - Cadastrar um ponto de coleta</title>
+{% endblock title %}
 
-        <div class="field">
-          <label for="name">Nome da entidade: </label>
-          <input type="text" name="name" required>
-        </div>
+{% block styles%}
+<link rel="stylesheet" href="./styles/create-point.css">
+{% endblock styles %}
 
-        <div class="field-group">
-          <div class="field">
-            <label for="adress">Endereço</label>
-            <input type="text" name="adress" required>
-          </div>
-          <div class="field">
-            <label for="number">Número/Complemento</label>
-            <input type="text" name="number" required>
-          </div>
-        </div>
+{% block content %}
+{% include "./partials/page-header.html" %}
+<form action="">
+  <h1>Cadastro do ponto de coleta</h1>
+  <fieldset class="data-fieldset">
+    <legend>
+      <h2>Dados da entidade</h2>
+    </legend>
 
-        <div class="field-group ">
-          <div class="field">
-            <label for="state">Estado</label>
-            <select name="uf" required>
-              <option value="">Selecione um estado</option>
-            </select>
-
-            <input type="hidden" name="state"> 
-          </div> 
-          <div class="field">
-            <label for="city">Cidade</label>
-            <select name="city" disabled required>
-              <option value="">Selecione uma cidade</option>
-            </select>
-          </div>
-        </div>
-
-      </fieldset>
-      <fieldset>
-        <legend><h2>Ítens de coleta</h2></legend>
-        <div class="items-grid">
-          <li data-id="1">
-            <img src="/assets/lampadas.svg" alt="lampadas">
-            <span>Lampadas</span>
-          </li>
-          <li data-id="2">
-            <img src="/assets/baterias.svg" alt="baterias">
-            <span>Baterias</span>
-          </li>
-          <li data-id="3">
-            <img src="/assets/papeis-papelao.svg" alt="papéis e papelão">
-            <span>Papéis e Papelão</span>
-          </li>
-          <li data-id="4">
-            <img src="/assets/eletronicos.svg" alt="eletronicos">
-            <span>Resíduos Eletrônicos</span>
-          </li>
-          <li data-id="5">
-            <img src="/assets/organicos.svg" alt="resíduos orgânicos">
-            <span>Resíduos Orgânicos</span>
-          </li>
-          <li data-id="6">
-            <img src="/assets/oleo.svg" alt="óleo">
-            <span>Óleo de Cozinha</span>
-          </li>
-        </div>
-
-        <input type="hidden" name="items">
-      </fieldset>
-      <button type="submit">Cadastrar ponto de coleta</button>
-    </form>
+    <div class="field-group">
+      <div class="field">
+        <label for="name">Nome da entidade: </label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="field">
+        <label for="image">Imagem da instituição: </label>
+        <input type="url " name="image" required>
+      </div>
+    </div>
     
-  </div>
-  <script src="/scripts/create-point.js"></script>
-</body>
-</html>
+
+    <div class="field-group">
+      <div class="field">
+        <label for="adress">Endereço</label>
+        <input type="text" name="adress" required>
+      </div>
+      <div class="field">
+        <label for="number">Número/Complemento</label>
+        <input type="text" name="number" required>
+      </div>
+    </div>
+
+    <div class="field-group ">
+      <div class="field">
+        <label for="state">Estado</label>
+        <select name="uf" required>
+          <option value="">Selecione um estado</option>
+        </select>
+
+        <input type="hidden" name="state">
+      </div>
+      <div class="field">
+        <label for="city">Cidade</label>
+        <select name="city" disabled required>
+          <option value="">Selecione uma cidade</option>
+        </select>
+      </div>
+    </div>
+
+  </fieldset>
+  <fieldset>
+    <legend>
+      <h2>Itens de coleta</h2>
+      <span>Selecione um ou mais itens abaixo</span>
+    </legend>
+    <div class="items-grid">
+      <li data-id="1">
+        <img src="/assets/lampadas.svg" alt="lampadas">
+        <span>Lampadas</span>
+      </li>
+      <li data-id="2">
+        <img src="/assets/baterias.svg" alt="baterias">
+        <span>Baterias</span>
+      </li>
+      <li data-id="3">
+        <img src="/assets/papeis-papelao.svg" alt="papéis e papelão">
+        <span>Papéis e Papelão</span>
+      </li>
+      <li data-id="4">
+        <img src="/assets/eletronicos.svg" alt="eletronicos">
+        <span>Resíduos Eletrônicos</span>
+      </li>
+      <li data-id="5">
+        <img src="/assets/organicos.svg" alt="resíduos orgânicos">
+        <span>Resíduos Orgânicos</span>
+      </li>
+      <li data-id="6">
+        <img src="/assets/oleo.svg" alt="óleo">
+        <span>Óleo de Cozinha</span>
+      </li>
+    </div>
+
+    <input type="hidden" name="items">
+  </fieldset>
+  <button type="submit">Cadastrar ponto de coleta</button>
+</form>
+{% endblock content %}
+
+{% block script %}
+<script src="/scripts/create-point.js"></script>
+{% endblock script %}
