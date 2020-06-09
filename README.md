@@ -1,4 +1,5 @@
-# Ecoleta
+<h1 align="center">Ecoleta</h1>
+
 Ecoleta foi um projeto realizado durante a primeira [The Next Level Week](https://rocketseat.com.br/) sendo apresentado pelo instrutor [@maykbrito](https://github.com/maykbrito). 
 ***
 ## Desenvolvido com 
