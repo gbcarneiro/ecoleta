@@ -14,4 +14,7 @@ Ecoleta foi um projeto realizado durante a primeira [The Next Level Week](https:
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [SQLite](https://www.sqlite.org/index.html) 
 
+---
+<p align="center">by Gabriel Carneiro 🧨</p>
+
 
