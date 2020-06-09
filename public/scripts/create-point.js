@@ -56,7 +56,7 @@ function handleSelectedItem(event) {
   //verify if exists sellected items, if it 
   //take the selected items 
   const itemId = itemLi.dataset.id
-  
+   
   const alreadySelected = selectedItems.findIndex(item => {
     const itemFound = item == itemId
     return itemFound
@@ -76,8 +76,6 @@ function handleSelectedItem(event) {
     //if not, add it 
     selectedItems.push(itemId)
   }
-
-  console.log(selectedItems)
 
   //refresh the hidden imput 
   collectedItems.value = selectedItems 
