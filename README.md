@@ -1,7 +1,9 @@
 <h1 align="center">Ecoleta</h1>
 
-<p align="center">Projeto realizado durante a primeira [The Next Level Week](https://rocketseat.com.br/) sendo apresentado pelo instrutor [@maykbrito](https://github.com/maykbrito). </p>
-***
+<p align="center">Projeto realizado durante a primeira <a href="https://rocketseat.com.br/">The Next Level Week</a> sendo apresentado pelo instrutor <a href="https://github.com/maykbrito">@maykbrito</a>. </p>
+
+---
+
 ## Sobre 
 Ecoleta é um projeta que ajuda pessoas a encontrarem centros de coleta de resíduos que não podem ser jogados em lixo comum. 
 
