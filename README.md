@@ -1,7 +1,10 @@
 <h1 align="center">Ecoleta</h1>
 
-Ecoleta foi um projeto realizado durante a primeira [The Next Level Week](https://rocketseat.com.br/) sendo apresentado pelo instrutor [@maykbrito](https://github.com/maykbrito). 
+Projeto realizado durante a primeira [The Next Level Week](https://rocketseat.com.br/) sendo apresentado pelo instrutor [@maykbrito](https://github.com/maykbrito). 
 ***
+## Sobre 
+Ecoleta é um projeta que ajuda pessoas a encontrarem centros de coleta de resíduos que não podem ser jogados em lixo comum. 
+
 ## Desenvolvido com 
 - [HTML](https://www.w3schools.com/html/)
 - [JAVASCRIPT](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
