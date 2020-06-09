@@ -1,5 +1,6 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
+const db = require('./database/db')
 
 const server = express() 
 
@@ -10,7 +11,7 @@ nunjucks.configure('src/views', {
 })
 
 
-//configurating the public folder
+// configurating the public folder
 server.use(express.static('public'))
 
 //making the server
@@ -23,7 +24,16 @@ server.get('/create', (req, res) => {
 })
 
 server.get('/search', (req, res) => {
-  return res.render("search-results.html") 
+  //catch the data from database
+  db.all(`SELECT * FROM places`, function(err, rows) {
+    if (err) { 
+      return console.log(err)
+    }
+
+    const total = rows.length 
+
+    return res.render("search-results.html", { places: rows , total }) 
+  })  
 })
  
 server.listen(3000)
