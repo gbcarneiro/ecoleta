@@ -106,6 +106,12 @@
 {% endif %}
 {% endblock modal%}
 
+{% block modal2 %}
+{% if error %}
+    {% include "partials/modal-error.html" %}
+{% endif %}
+{% endblock modal2 %}
+
 {% block script %}
 <script src="/scripts/create-point.js"></script>
 {% endblock script %}

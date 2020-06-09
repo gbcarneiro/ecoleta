@@ -54,7 +54,8 @@ server.post('/savepoint', (req, res) => {
   
     function afterInsertData(err) {
       if (err) {
-        return console.log(err)
+        console.log(err)
+        return res.render("create-point.html", { error: true })
       } 
   
       console.log('Cadastrado com sucesso')
@@ -67,8 +68,15 @@ server.post('/savepoint', (req, res) => {
 })
 
 server.get('/search', (req, res) => {
+  const search = req.query.search
+
+  if (search == '') {
+    //empty search
+    return res.render("search-results.html", {total: 0})
+  } 
+
   //catch the data from database
-  db.all(`SELECT * FROM places`, function(err, rows) {
+  db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows) {
     if (err) { 
       return console.log(err)
     }
