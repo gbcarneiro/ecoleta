@@ -34,8 +34,8 @@ server.post('/savepoint', (req, res) => {
       INSERT INTO places (
         image, 
         name, 
-        adress, 
-        adress2, 
+        address, 
+        address2, 
         state, 
         city,
         items 
@@ -45,8 +45,8 @@ server.post('/savepoint', (req, res) => {
     const values = [
       data.image, 
       data.name, 
-      data.adress, 
-      data.adress2,
+      data.address, 
+      data.address2,
       data.state, 
       data.city, 
       data.items
